@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Muxlab Stagier Excercise</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Todo List -->
+      <ion-col size="5">
+        <h2>Todo</h2>
+        <ion-card class="card" *ngFor="let todo of todoList; let i = index" [attr.data-index]="i">
+          <ion-card-header>
+            <ion-card-title>{{ todo.title }}</ion-card-title>
+            <div class="side-btn">
+              <ion-button (click)="delete(i)" color="danger"><ion-icon name="md-trash"></ion-icon></ion-button>
+              <ion-button (click)="editTodo(i)"><ion-icon name="md-build"></ion-icon></ion-button>
+              <ion-button (click)="done(i)"><ion-icon name="md-checkmark"></ion-icon></ion-button>
+            </div>
+
+          </ion-card-header>
+
+          <ion-card-content>
+            {{ todo.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Done List -->
+      <ion-col push="1" size="5">
+        <h2>Done</h2>
+        <ion-card  class="card" *ngFor="let done of doneList; let i = index" [attr.data-index]="i">
+          <ion-card-header>
+            <ion-card-title>{{ done.title }}</ion-card-title>
+            <div class="side-btn">
+              <ion-button (click)="delete(i)" color="danger"><ion-icon name="md-trash"></ion-icon></ion-button>
+            </div>
+          </ion-card-header>
+
+          <ion-card-content>
+            {{ done.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addTodo()" class="add" color="success"><ion-icon name="md-add"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+</ion-content>
