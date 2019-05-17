@@ -73,13 +73,13 @@ export class TodoListPage implements OnInit {
           inputs: [
               {
                   title: 'title',
-                  type: 'text',
+                  // type: 'text',
                   id: 'title',
                   value: this.todoList[index].title
               },
               {
                   description: 'descr',
-                  type: 'text',
+                  // type: 'text',
                   id: 'descr',
                   value: this.todoList[index].description
               },
@@ -115,13 +115,13 @@ export class TodoListPage implements OnInit {
           inputs: [
               {
                   title: 'title',
-                  type: 'text',
+                  // type: 'text',
                   id: 'title',
                   placeholder: 'Title'
               },
               {
                   description: 'descr',
-                  type: 'text',
+                  // type: 'text',
                   id: 'descr',
                   placeholder: 'Details...'
               },
