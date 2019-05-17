@@ -121,7 +121,7 @@ export class TodoListPage implements OnInit {
               },
               {
                   description: 'descr',
-                  // type: 'text',
+                  // type: 'text',sdf
                   id: 'descr',
                   placeholder: 'Details...'
               },
