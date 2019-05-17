@@ -43,7 +43,8 @@ export class TodoListPage implements OnInit {
     return this.id;
   }
 
-    async delete(index: number) {
+    async delete(index: number, list = 'todo') {
+
         const alert = await this.alertController.create({
             header: 'Are you sure you wish to delete?',
             buttons: [
@@ -56,7 +57,11 @@ export class TodoListPage implements OnInit {
                     text: 'Delete',
                     handler: data => {
                         // this.todoList.pop(index);
-                        this.todoList.splice(index, 1);
+                        if (list === 'todo') {
+                            this.todoList.splice(index, 1);
+                        } else {
+                            this.doneList.splice(index, 1);
+                        }
                     }
 
                 }
@@ -72,13 +77,13 @@ export class TodoListPage implements OnInit {
           header: 'Add New Todo',
           inputs: [
               {
-                  title: 'title',
+                  // title: 'title',
                   // type: 'text',
                   id: 'title',
                   value: this.todoList[index].title
               },
               {
-                  description: 'descr',
+                  // description: 'descr',
                   // type: 'text',
                   id: 'descr',
                   value: this.todoList[index].description
@@ -114,13 +119,13 @@ export class TodoListPage implements OnInit {
           header: 'Add New Todo',
           inputs: [
               {
-                  title: 'title',
+                  // title: 'title',
                   // type: 'text',
                   id: 'title',
                   placeholder: 'Title'
               },
               {
-                  description: 'descr',
+                  // description: 'descr',
                   // type: 'text',sdf
                   id: 'descr',
                   placeholder: 'Details...'
@@ -147,11 +152,11 @@ export class TodoListPage implements OnInit {
 
   done(index: number) {
 
-    let temp = this.todoList.splice(index, 1);
-    console.log(temp);
-      this.doneList.push(temp[0]);
+        let temp = this.todoList.splice(index, 1);
+        console.log(temp);
+        this.doneList.push(temp[0]);
 
-      console.log(this.doneList);
+        console.log(this.doneList);
 
 
 

@@ -30,11 +30,11 @@
       <!-- Done List -->
       <ion-col push="1" size="5">
         <h2>Done</h2>
-        <ion-card  class="card" *ngFor="let done of doneList; let i = index" [attr.data-index]="i">
+        <ion-card  class="card" *ngFor="let done of doneList; let j = index" [attr.data-index]="j">
           <ion-card-header>
             <ion-card-title>{{ done.title }}</ion-card-title>
             <div class="side-btn">
-              <ion-button (click)="delete(i)" color="danger"><ion-icon name="md-trash"></ion-icon></ion-button>
+              <ion-button (click)="delete(j, 'done')" color="danger"><ion-icon name="md-trash"></ion-icon></ion-button>
             </div>
           </ion-card-header>
 
